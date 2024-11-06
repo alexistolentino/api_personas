@@ -230,3 +230,62 @@ Cuando ya no se requiera utilzar el ambiente virtual se puede salir con el sigui
 ````shell
 deactivate
 ````
+# Documentacion del GET 
+
+| **Punto** | **Nombre**       | **Descripción**                                                                                       |
+|-----------|------------------|-------------------------------------------------------------------------------------------------------|
+| 1         | **Description**   | Regresa todos los registros.                                                                          |
+| 2         | **Summary**       | Muestra todos los registros de la tabla personas.                                                   |
+| 3         | **Method**        | GET                                                                                                 |
+| 4         | **Endpoint**      | `http://localhost:8000/v1/personas`                                                                   |
+| 5         | **Authentication**| No aplica (NA)                                                                                        |
+| 6         | **Query Param**   | No aplica (NA)                                                                                        |
+| 7         | **Path Param**    | No aplica (NA)                                                                                        |
+| 8         | **Data**          | No aplica (NA)                                                                                        |
+| 9         | **Status Code**   | 202 (Aceptado)                                                                                     |
+| 10        | **Response Type** | Application/json                                                                                   |
+| 11        | **Response**      | {"personas": [{"id_persona": " ", "nombre": " ", "primer_apellido": " ", "segundo_apellido": " ", "email": " ", "telefono": " "}]}
+| 12        | **Error Status Code**| 501 (No Implementado)                                                                            |
+| 13        | **Error Response Type** | Application/json                                                                               |
+| 14        | **Error Response**| {"message": "error en la bd"}                                                                       |
+| 15        | **cURL**          | `curl -X GET http://localhost:8000/v1/personas`                                                      |
+
+# Documentación del GET(ID)
+
+| **Punto**               | **Nombre**           | **Descripción**                                                                                                        |
+|-------------------------|----------------------|------------------------------------------------------------------------------------------------------------------------|
+| 1                       | **Description**      | Regresa un registro especifico en la tabla personas personas.                                                                     |
+| 2                       | **Summary**          |Obtener los datos de una persona en especifica en la base de datos                                                                    |
+| 3                       | **Method**           | GET                                                                                                                   |
+| 4                       | **Endpoint**         | `http://localhost:8000/v1/personas`                                                                                   |
+| 5                       | **Authentication**   | No aplica (NA)                                                                                                        |
+| 6                       | **Query Param**      | No aplica (NA)                                                                                                        |
+| 7                       | **Path Param**       | No aplica (NA)                                                                                                        |
+| 8                       | **Data**             | No aplica (NA)                                                                                                        |
+| 9                       | **Status Code**      | 200 (Aceptado)                                                                                                        |
+| 10                      | **Response Type**    | Application/json                                                                                                      |
+| 11                      | **Response**         | {"personas": [{"id_persona": " ", "nombre": " ", "primer_apellido": " ", "segundo_apellido": " ", "email": " ", "telefono": " "}]}
+| 12                      | **Error Status Code**| 404 (No Implementado)                                                                                                 |
+| 13                      | **Error Response Type** | Application/json                                                                                                     |
+| 14                      | **Error Response**   | {"message": "registro no encontrado"}                                                                                         |
+| 15                      | **cURL**             | `curl -X GET http://localhost:8000/v1/personas`                                                                       |
+
+# Documentacion de PUT
+
+| **Punto**               | **Nombre**                | **Descripción**                                                                                                        |
+|-------------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| 1                       | **Description**           | Actualiza un registro específico en la tabla personas.                                                                 |
+| 2                       | **Summary**               | Modifica los datos de una persona específica en la base de datos.                                                     |
+| 3                       | **Method**                | PUT                                                                                                                   |
+| 4                       | **Endpoint**              | `http://localhost:8000/v1/personas/{id-persona}`                                                                      |
+| 5                       | **Authentication**        | No aplica (NA)                                                                                                        |
+| 6                       | **Query Param**           | No aplica (NA)                                                                                                        |
+| 7                       | **Path Param**            | `id-persona`                                                                                                          |
+| 8                       | **Data**                  | `{"personas": {"nombre": "str", "primer_apellido": "str", "segundo_apellido": "str", "email": "str", "telefono": "str"}}` |
+| 9                       | **Status Code**           | 200 (OK)                                                                                                              |
+| 10                      | **Response Type**         | Application/json                                                                                                      |
+| 11                      | **Response**              | `{"message": "Registro actualizado exitosamente"}`                                                                    |
+| 12                      | **Error Status Code**     | 404 (No Encontrado)                                                                                                   |
+| 13                      | **Error Response Type**   | Application/json                                                                                                      |
+| 14                      | **Error Response**        | `{"message": "Registro no encontrado"}`                                                                               |
+| 15                      | **CURL**                  | `curl -X PUT -H "Content-Type: application/json" -d '{"personas": {"nombre": "nuevo", "primer_apellido": "nuevo"}}' http://localhost:8000/v1/personas/{id-persona}` |

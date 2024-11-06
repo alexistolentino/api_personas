@@ -289,3 +289,22 @@ deactivate
 | 13                      | **Error Response Type**   | Application/json                                                                                                      |
 | 14                      | **Error Response**        | `{"message": "Registro no encontrado"}`                                                                               |
 | 15                      | **CURL**                  | `curl -X PUT -H "Content-Type: application/json" -d '{"personas": {"nombre": "nuevo", "primer_apellido": "nuevo"}}' http://localhost:8000/v1/personas/{id-persona}` |
+
+# Documentacion del POST
+| **Punto**               | **Nombre**                | **Descripción**                                                                                                        |
+|-------------------------|---------------------------|------------------------------------------------------------------------------------------------------------------------|
+| 1                       | **Description**           | Crea un nuevo registro en la tabla personas.                                                                          |
+| 2                       | **Summary**               | Agrega una nueva persona a la base de datos.                                                                          |
+| 3                       | **Method**                | POST                                                                                                                  |
+| 4                       | **Endpoint**              | `http://localhost:8000/v1/personas`                                                                                   |
+| 5                       | **Authentication**        | No aplica (NA)                                                                                                        |
+| 6                       | **Query Param**           | No aplica (NA)                                                                                                        |
+| 7                       | **Path Param**            | No aplica (NA)                                                                                                        |
+| 8                       | **Data**                  | `{"personas": {"nombre": "str", "primer_apellido": "str", "segundo_apellido": "str", "email": "str", "telefono": "str"}}` |
+| 9                       | **Status Code**           | 201 (Created)                                                                                                         |
+| 10                      | **Response Type**         | Application/json                                                                                                      |
+| 11                      | **Response**              | `{"message": "Registro creado exitosamente"}`                                                                         |
+| 12                      | **Error Status Code**     | 400 (Bad Request, si los datos no son válidos)                                                                        |
+| 13                      | **Error Response Type**   | Application/json                                                                                                      |
+| 14                      | **Error Response**        | `{"message": "Datos inválidos"}`                                                                                      |
+| 15                      | **CURL**                  | `curl -X POST -H "Content-Type: application/json" -d '{"personas": {"nombre": "nuevo", "primer_apellido": "nuevo"}}' http://localhost:8000/v1/personas` |
